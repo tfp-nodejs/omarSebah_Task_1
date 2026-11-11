@@ -10,7 +10,7 @@ async function getData() {
   } catch (err) {
     console.log(err);
   } finally {
-    console.log("...Done");
+    console.log(".....Done");
   }
 }
 getData();
