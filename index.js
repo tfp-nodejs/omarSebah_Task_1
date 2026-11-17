@@ -1,3 +1,5 @@
+import customFilter from "./utils.js";
+
 async function getData() {
   try {
     const res = await fetch("https://jsonplaceholder.typicode.com/posts");
@@ -8,10 +10,9 @@ async function getData() {
 
     const data = await res.json();
 
-    const filteredPosts = data.filter(post => post.title.length < 25);
+    const filteredPosts = customFilter(data, (post) => post.title.length < 25);
 
     console.log(filteredPosts);
-
   } catch (err) {
     console.log(err);
   } finally {
